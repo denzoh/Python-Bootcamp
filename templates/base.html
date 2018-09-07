@@ -12,7 +12,8 @@
   </head>
   <body>
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Analysis </a>
+            <a class="navbar-brand" href="{% url 'home'%}">
+            <img src="{% static 'images/letter1.png' %}" height = 40 width=40 style="padding-right:10px;" class="d-inline-block align-top" alt="">Analyzer</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -43,11 +44,12 @@
                   </div>
                 </li> -->
               </ul>
-
-              <ul  class="navbar-nav mr-auto">
-              <li style="margin-right:20px;"> <a  class="btn btn-primary" href="{% url 'login' %}" role="button">Login</a></li>
-              <li> <a class="btn btn-secondary" href="{%  url 'signup' %}" role="button">Signup</a></li>
-              </ul>
+                <div class="collapse navbar-collapse">
+                  <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-item nav-link" href="{%  url 'signup' %}">Signup</a>
+                  </div>
+                </div>
             </div>
           </nav>
 

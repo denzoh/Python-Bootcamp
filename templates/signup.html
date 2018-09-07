@@ -9,23 +9,26 @@
               <li class="active">Sign up</li>
             </ol>
             {% endblock breadcrumb %}
-<div class="container" style="margin-top:10px;width: 450px;">
-    <div class="card">
-      <div class="card-header">Sign Up </div>
-        <div class="card-body">
-          
-            <form class="form-signin"  action="{% url 'signup' %}" method="POST">
-                {% csrf_token %}
+            {% if error %}
+              {{ error }}
+            {% endif %}
+            <div class="container" style="margin-top:10px;width: 450px;">
+                <div class="card">
+                  <div class="card-header">Sign Up</div>
+                    <div class="card-body">
 
-                {{ form|bootstrap }}
+                        <form class="form-signin"  action="{% url 'signup' %}" method="POST">
+                            {% csrf_token %}
+
+                            {{ form|bootstrap }}
 
 
-           <div class="form-group">
-                 <button type="submit" class="btn btn-primary">Signup</button>
-           </div>
-         </form>
+                       <div class="form-group">
+                             <button type="submit" class="btn btn-primary">Signup</button>
+                       </div>
+                     </form>
 
-       </div>
-     </div>
-</div>
+                   </div>
+                 </div>
+            </div>
 {% endblock %}
