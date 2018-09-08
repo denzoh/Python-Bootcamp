@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_bootstrap_breadcrumbs',
     'bootstrap4',
-    'bootstrapform'
+    'bootstrapform',
+    'students',
+    'lecturers'
 
 ]
 
