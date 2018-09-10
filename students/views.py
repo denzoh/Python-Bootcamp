@@ -10,8 +10,8 @@ from django.contrib.auth import authenticate,login,logout
 from .models import CreateUser
 
 # Create your views here.
-def home(request):
-    return HttpResponse('Eggs are Great!')
+# def home(request):
+#     return HttpResponse('Eggs are Great!')
 
 class SignupView(TemplateView):
     template_name = 'signup.html'

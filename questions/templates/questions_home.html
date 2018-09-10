@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block topcontent %}
+
+{% load django_bootstrap_breadcrumbs %}
+            {% block breadcrumb %}
+            <ol class="breadcrumb">
+              <li><a href="/">Home</a></li>
+              <li class="active">Questions</li>
+            </ol>
+            {% endblock breadcrumb %}
+      <div class="row">
+             <div class="col-md-12">
+                <a class="btn btn-info btn-sm" href="#"><i class="fa fa-user"></i> Add Question</a>
+              </div>
+      </div>
+
+  {% for ques in questions %}
+  Copy
+      <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ques.category}}</h5>
+        <p class="card-text">{{ques.body}}</p>
+      </div>
+      </div>
+    {% endfor %}
+
+
+{% endblock %}
