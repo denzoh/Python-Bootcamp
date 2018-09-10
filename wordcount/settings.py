@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'bootstrap4',
     'bootstrapform',
     'students',
-    'lecturers'
+    'lecturers',
+    'questions'
 
 ]
 
@@ -82,9 +83,9 @@ WSGI_APPLICATION = 'wordcount.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'USER': 'user_manager',
-        'PASSWORD': 'user_pass',
-        'NAME': 'users',#database name
+        'USER': 'student_manager',
+        'PASSWORD': 'student_pass',
+        'NAME': 'students',#database name
         'HOST': 'Localhost',
         'PORT': ''
     }
@@ -130,4 +131,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
-]
+
+    ]
