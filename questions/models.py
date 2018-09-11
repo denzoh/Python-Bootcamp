@@ -1,12 +1,12 @@
 from django.db import models
 from students.models import CreateUser
-
+from django.utils import timezone
 # Create your models here.
 class CreateQuestion(models.Model):
     category = models.CharField(max_length=255)
     body = models.TextField()
     url = models.TextField()
-    pub_date = models.DateField()
+    pub_date = models.DateTimeField(auto_now=True)
     vote_total = models.IntegerField()
     hunter = models.ForeignKey(CreateUser,on_delete=models.CASCADE,null=True)
 

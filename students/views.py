@@ -36,36 +36,7 @@ class SignupView(TemplateView):
             return HttpResponseRedirect('login')
 
         return render(request, self.template_name, {'form': form})
-# def get(self, request, *args, **kwargs):
-#     form = SignupForm()
-#     return super(SignupView,self).get(request,signup_form=form)
-    # def post(self,request, *args, **kwargs):
-    #
-    #     form = SignupForm(request.POST)
-    #
-    #     if form.is_valid():
-    #         username = form.cleaned_data['username']
-    #         email = form.cleaned_data['email']
-    #         password = form.cleaned_data['password']
-    #         user = authenticate(request,username=username,email=email,password=password)
-    #
-    #     return super(SignupView,self).get(request,signup_form=form)
-# def signup(request):
-#     if request.method == 'POST':#user has info and wants account now
-#         if request.POST.get('password')==request.POST.get('confirm_password'):
-#             try:
-#                 user = User.objects.get(username=request.POST.get('username'))
-#                 return render(request, 'signup.html',{'error':'User name is taken'})
-#             except User.DoesNotExist:
-#                 user = User.objects.create_user(request.POST.get('username'),password = request.POST.get('password'))
-#                 auth.login(request,user)
-#                 return redirect('home')
-#         else:
-#             return render(request, 'signup.html', {'form': SignupForm},{'error':'Passwords do not match'})
-#     else:
-#         form = SignupForm(request.POST)
-#         user = form.save()
-#         return render(request, 'signup.html', {'form': SignupForm})
+
 class LoginView(TemplateView):
     template_name = 'login.html'
     initial = {'key': 'value'}
@@ -113,7 +84,7 @@ class LoginView(TemplateView):
 #         form = LoginForm()
 #         return render(request, 'login.html', {'form': LoginForm})
 #
-def account_logout(request):
-    logout(request)
-    url = reverse('students:login')
-    return redirect(url,args=(),kwargs={})
+class LogOutView(TemplateView):
+    def get(self, request):
+        logout(request)
+        return HttpResponseRedirect('/login')

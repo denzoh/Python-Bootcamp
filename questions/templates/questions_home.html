@@ -4,24 +4,20 @@
 
 {% load django_bootstrap_breadcrumbs %}
             {% block breadcrumb %}
-            <ol class="breadcrumb">
+            <ol class="breadcrumb fixed">
               <li><a href="/">Home</a></li>
               <li class="active">Questions</li>
             </ol>
             {% endblock breadcrumb %}
-      <div class="row">
-             <div class="col-md-12">
-                <a class="btn btn-info btn-sm" href="#"><i class="fa fa-user"></i> Add Question</a>
-              </div>
-      </div>
 
+<div class="container-fluid">
   {% for ques in questions %}
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <div class="card mb-2">
+      <div class="card  shadow mb-3">
       <div class="card-body">
         <h5 class="card-title">{{ques.category}}</h5>
-        <p class="card-text">{{ques.body}}</p>
+        <p class="card-text"><a href="#">{{ques.body}}</a></p>
         <strong>Author: {{ques.hunter}}</strong><br>
         <small>Created_at: {{ques.pub_date}}</small>
       </div>
@@ -29,6 +25,6 @@
     </div>
   </div>
     {% endfor %}
-
+</div>
 
 {% endblock %}
